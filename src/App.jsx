@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '@/pages/Home';
 import Board from '@/pages/Board';
 import SeatManagement from '@/pages/SeatManagement';
+import '@/styles/reset.css';
 
 function App() {
   return (
