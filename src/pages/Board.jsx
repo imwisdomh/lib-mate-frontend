@@ -1,12 +1,12 @@
 import Header from '@/components/Header';
-import Nav from '@/components/Nav';
+import Navigation from '@/components/Navigation';
 
 const Board = () => {
   return (
     <>
       <Header />
       <div>Board</div>
-      <Nav />
+      <Navigation />
     </>
   );
 };
