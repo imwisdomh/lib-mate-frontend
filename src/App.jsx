@@ -3,6 +3,7 @@ import Home from '@/pages/Home';
 import Board from '@/pages/Board';
 import SeatManagement from '@/pages/SeatManagement';
 import '@/styles/reset.css';
+import '@/styles/global.css';
 
 function App() {
   return (
