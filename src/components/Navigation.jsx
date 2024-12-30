@@ -114,7 +114,7 @@ const Navigation = () => {
       <NavList>
         <NavItem>
           <NavIcon icon={faHouse} />
-          <NavLink to="/home">홈</NavLink>
+          <NavLink to="/">홈</NavLink>
         </NavItem>
         <NavItem>
           <SeatManagementLink to="/seat-management">내 좌석</SeatManagementLink>
