@@ -5,11 +5,23 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faCommentNodes } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = styled.nav`
-  background-color: rgb(248, 249, 250);
   position: fixed;
-  bottom: 0;
   width: 100%;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 1080px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 70px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: block;
+    top: unset;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const NavList = styled.ul`
@@ -17,48 +29,83 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
+  margin-right: 50px;
+
+  &:hover {
+    color: rgb(98, 190, 46);
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
 `;
 
 const NavIcon = styled(FontAwesomeIcon)`
-  color: rgb(18, 124, 107);
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    font-size: 1.2rem;
+    color: rgb(18, 124, 107);
+    margin-bottom: 5px;
+  }
 `;
 
 const NavLink = styled(Link)`
   text-decoration: none;
   color: rgb(18, 124, 107);
-  font-weight: 500;
+  font-size: 1.7rem;
+  font-weight: 600;
 
   &:hover {
     color: rgb(98, 190, 46);
-    text-decoration: underline;
   }
 
-  &:active {
-    color: rgb(204, 209, 18);
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
 const SeatManagementLink = styled(Link)`
   text-decoration: none;
-  font-weight: 500;
-  color: white;
-  background: linear-gradient(45deg, rgb(18, 124, 107), rgb(98, 190, 46), rgb(204, 209, 18));
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: -10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: rgb(18, 124, 107);
+
+  &:hover {
+    color: rgb(98, 190, 46);
+  }
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(45deg, rgb(18, 124, 107), rgb(98, 190, 46), rgb(204, 209, 18));
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
 `;
 
 const Navigation = () => {
