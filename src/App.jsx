@@ -3,7 +3,7 @@ import Home from '@/pages/Home';
 import Auth from '@/pages/Auth';
 import Board from '@/pages/Board';
 import SeatManagement from '@/pages/SeatManagement';
-import Settings from './pages/Settings';
+import Settings from '@/pages/Settings';
 import '@/styles/reset.css';
 import '@/styles/global.css';
 
