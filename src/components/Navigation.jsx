@@ -1,8 +1,27 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faCommentNodes } from '@fortawesome/free-solid-svg-icons';
+
+const Header = styled.div`
+  position: fixed;
+  width: 100%;
+  max-width: 1080px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+`;
+
+const SettingIcon = styled(FontAwesomeIcon)`
+  font-size: 2rem;
+  color: rgb(18, 124, 107);
+`;
 
 const Nav = styled.nav`
   position: fixed;
@@ -111,21 +130,28 @@ const SeatManagementLink = styled(Link)`
 
 const Navigation = () => {
   return (
-    <Nav>
-      <NavList>
-        <NavItem>
-          <NavIcon icon={faHouse} />
-          <NavLink to="/">홈</NavLink>
-        </NavItem>
-        <NavItem>
-          <SeatManagementLink to="/seat-management">내 좌석</SeatManagementLink>
-        </NavItem>
-        <NavItem>
-          <NavIcon icon={faCommentNodes} />
-          <NavLink to="/board">게시판</NavLink>
-        </NavItem>
-      </NavList>
-    </Nav>
+    <>
+      <Header>
+        <Link to="/settings">
+          <SettingIcon icon={faCircleUser} />
+        </Link>
+      </Header>
+      <Nav>
+        <NavList>
+          <NavItem>
+            <NavIcon icon={faHouse} />
+            <NavLink to="/">홈</NavLink>
+          </NavItem>
+          <NavItem>
+            <SeatManagementLink to="/seat-management">내 좌석</SeatManagementLink>
+          </NavItem>
+          <NavItem>
+            <NavIcon icon={faCommentNodes} />
+            <NavLink to="/board">게시판</NavLink>
+          </NavItem>
+        </NavList>
+      </Nav>
+    </>
   );
 };
 
