@@ -5,9 +5,19 @@ const Auth = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
+  const signUp = async (e) => {
+    e.preventDefault();
+    alert('회원가입 성공');
+  };
+
+  const signIn = async (e) => {
+    e.preventDefault();
+    alert('로그인 성공');
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={newAccount ? signUp : signIn}>
         <input type="text" value={id} onChange={(e) => setId(e.target.value)} placeholder="아이디" required />
         <input
           type="password"
