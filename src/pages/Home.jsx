@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Header from '@/components/Header';
 import Navigation from '@/components/Navigation';
 
 const Home = () => {
@@ -11,7 +10,6 @@ const Home = () => {
 
   return (
     <>
-      <Header />
       <div>
         <div>
           <button onClick={() => handleFloorChange(1)}>1층</button>
