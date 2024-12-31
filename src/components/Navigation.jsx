@@ -20,6 +20,7 @@ const Nav = styled.nav`
     display: block;
     top: unset;
     bottom: 0;
+    height: unset;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
   }
 `;
