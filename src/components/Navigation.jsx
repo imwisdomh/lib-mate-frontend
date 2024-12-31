@@ -10,10 +10,10 @@ const Header = styled.div`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 70px;
+  height: 60px;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
 `;
 
 const SettingIcon = styled(FontAwesomeIcon)`
@@ -25,10 +25,11 @@ const Nav = styled.nav`
   position: fixed;
   width: 100%;
   max-width: 1080px;
-  top: 0;
+  /* top: 0; */
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
-  height: 70px;
+  height: 60px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -130,6 +131,7 @@ const Navigation = () => {
   return (
     <>
       <Header>
+        <div>로고 같은 거 넣을 자리</div>
         <Link to="/settings">
           <SettingIcon icon={faCircleUser} />
         </Link>
