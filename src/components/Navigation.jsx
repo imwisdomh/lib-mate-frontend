@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import { faCommentNodes } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser, faHouse, faCommentNodes } from '@fortawesome/free-solid-svg-icons';
 
 const Header = styled.div`
   position: fixed;
