@@ -1,49 +1,16 @@
-import { useState } from 'react';
+import useAuth from '@/hooks/useAuth';
 
 const Auth = () => {
-  const [newAccount, setNewAccount] = useState(true);
-  const [formData, setFormData] = useState({ id: '', password: '', name: '', phoneNumber: '' });
-  const [loading, setLoading] = useState(false);
+  const { newAccount, formData, loading, toggleNewAccount, handleChange, handleSubmit } = useAuth();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-
-    const url = newAccount ? 'http://localhost:8080/api/auth/signup' : 'http://localhost:8080/api/auth/signin';
-
-    const body = newAccount
-      ? { id: formData.id, password: formData.password, name: formData.name, phoneNumber: formData.phoneNumber }
-      : { id: formData.id, password: formData.password };
-
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-      });
-
-      if (response.ok) {
-        alert(newAccount ? '회원가입 성공' : '로그인 성공');
-      } else {
-        alert(newAccount ? '회원가입 실패' : '로그인 실패');
-      }
-    } catch (e) {
-      console.error(newAccount ? '회원가입 중 오류 발생:' : '로그인 중 오류 발생:', e);
-    } finally {
-      setLoading(false);
-    }
+    handleSubmit();
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}>
         <input type="text" name="id" value={formData.id} onChange={handleChange} placeholder="아이디" required />
         <input
           type="password"
@@ -71,7 +38,7 @@ const Auth = () => {
         </button>
       </form>
       <div>
-        <button onClick={() => setNewAccount(!newAccount)}>
+        <button onClick={toggleNewAccount}>
           {newAccount ? '계정이 이미 있으신가요? 로그인' : '아직 회원이 아니신가요? 회원가입'}
         </button>
       </div>
