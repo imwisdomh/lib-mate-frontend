@@ -83,6 +83,12 @@ export default Home;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Content = styled.main`
@@ -92,6 +98,7 @@ const Content = styled.main`
   align-items: center;
   padding: 20px;
   margin-top: 150px;
+  margin-bottom: 70px;
 `;
 
 const FloorSelection = styled.div`
@@ -137,8 +144,17 @@ const FloorButton = styled.button`
 `;
 
 const SeatGrid = styled.div`
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   margin-top: 60px;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  justify-content: flex-start;
 
   @media (max-width: 768px) {
     margin-top: 0;
@@ -147,12 +163,16 @@ const SeatGrid = styled.div`
 
 const Row = styled.div`
   display: flex;
-  justify-content: center;
   gap: 10px;
+  min-width: 800px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: space-between;
+  padding: 0 10px;
 `;
 
 const Gap = styled.div`
   width: 30px;
-  height: 40px;
+  height: 30px;
   background-color: transparent;
 `;
