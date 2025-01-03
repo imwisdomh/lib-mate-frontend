@@ -58,7 +58,6 @@ const NavItem = styled.li`
   @media (max-width: 768px) {
     margin: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex: 1;
@@ -81,6 +80,9 @@ const NavLink = styled(Link)`
   color: rgb(18, 124, 107);
   font-size: 1.7rem;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &:hover {
     color: rgb(98, 190, 46);
@@ -140,15 +142,18 @@ const Navigation = () => {
       <Nav>
         <NavList>
           <NavItem>
-            <NavIcon icon={faHouse} />
-            <NavLink to="/">홈</NavLink>
+            <NavLink to="/">
+              <NavIcon icon={faHouse} />홈
+            </NavLink>
           </NavItem>
           <NavItem>
             <SeatManagementLink to="/seat-management">내 좌석</SeatManagementLink>
           </NavItem>
           <NavItem>
-            <NavIcon icon={faCommentNodes} />
-            <NavLink to="/board">게시판</NavLink>
+            <NavLink to="/board">
+              <NavIcon icon={faCommentNodes} />
+              게시판
+            </NavLink>
           </NavItem>
         </NavList>
       </Nav>
