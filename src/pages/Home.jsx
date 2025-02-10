@@ -93,7 +93,6 @@ const FloorButton = styled.button`
   margin: 0 10px;
   padding: 7px 20px;
   font-size: 16px;
-  cursor: pointer;
   border: 1px solid #ccc;
   background-color: #f5f5f5;
   border-radius: 5px;
@@ -110,11 +109,7 @@ const SeatGrid = styled.div`
   margin-top: 60px;
   width: 100%;
   max-width: 1024px;
-  padding: 0 10px;
   box-sizing: border-box;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  justify-content: flex-start;
 
   @media (max-width: 768px) {
     margin-top: 0;
@@ -123,16 +118,11 @@ const SeatGrid = styled.div`
 
 const Row = styled.div`
   display: flex;
-  gap: 10px;
   min-width: 800px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
   justify-content: space-between;
-  padding: 0 10px;
 `;
 
 const Gap = styled.div`
   width: 30px;
   height: 30px;
-  background-color: transparent;
 `;
