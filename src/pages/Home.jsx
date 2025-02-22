@@ -56,8 +56,7 @@ const Content = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  margin-top: 150px;
+  margin-top: 170px;
   margin-bottom: 70px;
 `;
 

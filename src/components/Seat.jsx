@@ -7,11 +7,13 @@ const Seat = ({ number }) => {
 
   const handleClick = () => {
     if (seatStatus === 'empty') {
-      setSeatStatus('reserved');
-    } else if (seatStatus === 'reserved') {
-      setSeatStatus('occupied');
+      const isReserved = window.confirm('좌석을 예약하시겠습니까?');
+      if (isReserved) {
+        setSeatStatus('reserved');
+        window.alert(`예약 완료: ${number}`);
+      }
     } else {
-      setSeatStatus('empty');
+      window.alert('이미 선택된 좌석입니다!');
     }
   };
 
